@@ -77,11 +77,14 @@ namespace TexPacker
 
             EditorGUILayout.BeginHorizontal();
             GUILayout.FlexibleSpace();
-            if (GUILayout.Button("+"))
+            if (_items.Count < 4)
             {
-                TextureInput entry = new TextureInput();
-                _texturePacker.Add(entry);
-                _items.Add(new TextureItem(entry));
+                if (GUILayout.Button("+"))
+                {
+                    TextureInput entry = new TextureInput();
+                    _texturePacker.Add(entry);
+                    _items.Add(new TextureItem(entry));
+                }
             }
             GUILayout.FlexibleSpace();
             EditorGUILayout.EndHorizontal();
